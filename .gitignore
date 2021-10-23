@@ -1,0 +1,12 @@
+/cilk/
+/cmake-build-debug/
+/CMakeFiles/
+/Testing/
+
+bench_par
+bench_seq
+*.cmake
+*.cbp
+*.a
+Makefile
+CMakeCache.txt
