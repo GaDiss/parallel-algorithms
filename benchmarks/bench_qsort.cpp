@@ -13,6 +13,9 @@ using std::chrono::high_resolution_clock;
 using std::chrono::duration_cast;
 using std::chrono::milliseconds;
 
+/**
+ * Asserts if a is sorted on [l, r).
+ */
 bool assert_sorted(const long *a, size_t l, size_t r) {
     for (size_t i = l + 1; i < r; i++) {
         if (a[i - 1] > a[i]) return false;
@@ -33,7 +36,7 @@ int bench_qsort(void (*qsort)(long *, size_t const, size_t const)) {
         for (int j = 0; j < N; j++) a[j] = random();
 
         auto t_start = high_resolution_clock::now();
-        qsort(a, 0, N);
+        qsort(a, 0, N - 1);
         auto t_finish = high_resolution_clock::now();
         int t = duration_cast<milliseconds>(t_finish - t_start).count();
         t_sum += t;

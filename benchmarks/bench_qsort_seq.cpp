@@ -6,5 +6,5 @@
 #include "qsort_seq.h"
 
 int main() {
-    return bench_qsort(&qsort_seq<long>);
+    return bench_qsort(&qsort_seq);
 }

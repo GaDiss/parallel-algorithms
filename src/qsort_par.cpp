@@ -10,6 +10,11 @@
 
 using namespace std;
 
+/**
+ * Sorts elements of a in range [l, r] using paralleled
+ * quick sort algorithm, using fork-join and
+ * recursive divide and conquer.
+ */
 template<typename T>
 void qsort_par(T *a, size_t l, size_t r) {
     if (r <= l) return;

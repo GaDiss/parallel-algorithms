@@ -2,12 +2,9 @@ cmake_minimum_required(VERSION 3.17)
 project(parallel_algorithms)
 set(CMAKE_CXX_STANDARD 17)
 
-link_directories(cilk/lib)
-include_directories(cilk/include)
-include_directories(cilk/src/include)
-include_directories(src/headers benchmarks/headers)
-
 add_compile_options(-fcilkplus)
+
+include_directories(src/headers benchmarks/headers)
 
 set(SOURCES benchmarks/bench_qsort.cpp src/qsort_seq.cpp src/qsort_par.cpp)
 
