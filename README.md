@@ -17,7 +17,9 @@ par на 4 процессах и seq на одном процессе.
 2. Собрать проект при помощи CMake 
    * `CC=<Path to clang> CXX=<Path to clang++> cmake .`
    * `make`
-3. Запустить бенчмарки
+3. Запуск тестов
+   * `make test`
+4. Запустить бенчмарки
    * Для последовательного алгоритма: `CILK_NWORKERS=1 ./bench_seq`
    * Для параллельного алгоритма: `CILK_NWORKERS=4 ./bench_par`
 

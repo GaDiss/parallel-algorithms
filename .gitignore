@@ -2,6 +2,8 @@
 /cmake-build-debug/
 /CMakeFiles/
 /Testing/
+/gtest/
+/_deps/
 
 bench_par
 bench_seq
