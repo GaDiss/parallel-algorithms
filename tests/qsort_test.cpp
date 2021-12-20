@@ -3,8 +3,8 @@
 //
 
 #include <gtest/gtest.h>
-#include <qsort_par.h>
-#include <qsort_seq.h>
+#include "../src/qsort/qsort_par.h"
+#include "../src/qsort/qsort_seq.h"
 
 typedef void (*Qsort)(long *, size_t const, size_t const);
 

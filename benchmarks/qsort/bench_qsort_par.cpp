@@ -3,8 +3,8 @@
 //
 
 #include "bench_qsort.h"
-#include "qsort_seq.h"
+#include "../../src/qsort/qsort_par.h"
 
 int main() {
-    return bench_qsort(&qsort_seq);
+    return bench_qsort(&qsort_par);
 }

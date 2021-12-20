@@ -6,14 +6,14 @@ set(CMAKE_CXX_STANDARD 17)
 add_compile_options(-fcilkplus)
 
 include_directories(src/headers benchmarks/headers)
-set(SOURCES benchmarks/bench_qsort.cpp src/qsort_seq.cpp src/qsort_par.cpp)
+set(SOURCES benchmarks/qsort/bench_qsort.cpp src/qsort/qsort_seq.cpp src/qsort/qsort_par.cpp)
 
 # sequential benchmark executable
-add_executable(bench_seq benchmarks/bench_qsort_seq.cpp ${SOURCES})
+add_executable(bench_seq benchmarks/qsort/bench_qsort_seq.cpp ${SOURCES})
 target_link_libraries(bench_seq cilkrts)
 
 # parallel benchmark executable
-add_executable(bench_par benchmarks/bench_qsort_par.cpp ${SOURCES})
+add_executable(bench_par benchmarks/qsort/bench_qsort_par.cpp ${SOURCES})
 target_link_libraries(bench_par cilkrts)
 
 # Google tests
