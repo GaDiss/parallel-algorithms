@@ -50,5 +50,6 @@ add_executable(test_bfs tests/bfs_test.cpp ${SOURCES})
 target_link_libraries(test_bfs gtest_main cilkrts)
 
 include(GoogleTest)
-gtest_discover_tests(test_qsort test_bfs)
+gtest_discover_tests(test_qsort)
+gtest_discover_tests(test_bfs)
 
