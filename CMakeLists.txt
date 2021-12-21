@@ -3,7 +3,7 @@ project(parallel_algorithms)
 set(CMAKE_CXX_STANDARD 17)
 
 # OpenCilk
-add_compile_options(-O2 -fcilkplus -DUSE_CILK_PLUS_RUNTIME)
+add_compile_options(-fcilkplus -DUSE_CILK_PLUS_RUNTIME)
 
 include_directories(pctl/include cmdline/include chunkedseq/include)
 set(SOURCES
@@ -41,8 +41,14 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
+
 add_executable(test_qsort tests/qsort_test.cpp ${SOURCES})
 target_link_libraries(test_qsort gtest_main cilkrts)
+
+
+add_executable(test_bfs tests/bfs_test.cpp ${SOURCES})
+target_link_libraries(test_bfs gtest_main cilkrts)
+
 include(GoogleTest)
-gtest_discover_tests(test_qsort)
+gtest_discover_tests(test_qsort test_bfs)
 

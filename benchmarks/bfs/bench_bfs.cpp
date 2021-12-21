@@ -18,7 +18,7 @@ using std::chrono::milliseconds;
  * Finds distance between 'from' and 'to'.
  */
 int bench_bfs(int (*bfs)(vector<vector<int>>&, int const, int const)) {
-    int N = 500;
+    int N = 400;
     int N2= N * N;
     int N3= N2 * N;
 
