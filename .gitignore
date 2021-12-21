@@ -5,8 +5,7 @@
 /gtest/
 /_deps/
 
-bench_par
-bench_seq
+bench_*
 *.cmake
 *.cbp
 *.a

@@ -3,18 +3,33 @@ project(parallel_algorithms)
 set(CMAKE_CXX_STANDARD 17)
 
 # OpenCilk
-add_compile_options(-fcilkplus)
+add_compile_options(-fcilkplus -I pctl/include)
 
 include_directories(src/headers benchmarks/headers)
-set(SOURCES benchmarks/qsort/bench_qsort.cpp src/qsort/qsort_seq.cpp src/qsort/qsort_par.cpp)
+set(SOURCES
+        benchmarks/qsort/bench_qsort.cpp
+        src/qsort/qsort_seq.cpp
+        src/qsort/qsort_par.cpp
+        benchmarks/bfs/bench_bfs.cpp
+        src/bfs/bfs_seq.cpp
+        src/bfs/bfs_par.cpp
+        )
 
-# sequential benchmark executable
-add_executable(bench_seq benchmarks/qsort/bench_qsort_seq.cpp ${SOURCES})
-target_link_libraries(bench_seq cilkrts)
+# sequential quick sort benchmark executable
+add_executable(bench_qsort_seq benchmarks/qsort/bench_qsort_seq.cpp ${SOURCES})
+target_link_libraries(bench_qsort_seq cilkrts)
 
-# parallel benchmark executable
-add_executable(bench_par benchmarks/qsort/bench_qsort_par.cpp ${SOURCES})
-target_link_libraries(bench_par cilkrts)
+# parallel quick sort benchmark executable
+add_executable(bench_qsort_par benchmarks/qsort/bench_qsort_par.cpp ${SOURCES})
+target_link_libraries(bench_qsort_par cilkrts)
+
+# sequential bfs sort benchmark executable
+add_executable(bench_bfs_seq benchmarks/bfs/bench_bfs_seq.cpp ${SOURCES})
+target_link_libraries(bench_bfs_seq cilkrts)
+
+# parallel quick sort benchmark executable
+add_executable(bench_bfs_par benchmarks/bfs/bench_bfs_par.cpp ${SOURCES})
+target_link_libraries(bench_bfs_par cilkrts)
 
 # Google tests
 include(FetchContent)
