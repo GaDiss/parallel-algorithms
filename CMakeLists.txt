@@ -3,9 +3,9 @@ project(parallel_algorithms)
 set(CMAKE_CXX_STANDARD 17)
 
 # OpenCilk
-add_compile_options(-fcilkplus -I pctl/include)
+add_compile_options(-fcilkplus)
 
-include_directories(src/headers benchmarks/headers)
+include_directories(pctl/include cmdline/include chunkedseq/include)
 set(SOURCES
         benchmarks/qsort/bench_qsort.cpp
         src/qsort/qsort_seq.cpp

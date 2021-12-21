@@ -1,3 +1,9 @@
 [submodule "pctl"]
 	path = pctl
 	url = https://github.com/deepsea-inria/pctl.git
+[submodule "cmdline"]
+	path = cmdline
+	url = https://github.com/deepsea-inria/cmdline.git
+[submodule "chunkedseq"]
+	path = chunkedseq
+	url = https://github.com/deepsea-inria/chunkedseq.git
