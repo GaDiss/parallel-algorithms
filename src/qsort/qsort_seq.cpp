@@ -39,4 +39,5 @@ void qsort_seq(T *a, size_t l, size_t r) {
     qsort_seq(a, ++m, r);
 }
 
+template size_t partition(long *a, size_t l, size_t r);
 template void qsort_seq(long *a, size_t l, size_t r);

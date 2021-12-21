@@ -3,7 +3,7 @@ project(parallel_algorithms)
 set(CMAKE_CXX_STANDARD 17)
 
 # OpenCilk
-add_compile_options(-fcilkplus)
+add_compile_options(-O2 -fcilkplus -DUSE_CILK_PLUS_RUNTIME)
 
 include_directories(pctl/include cmdline/include chunkedseq/include)
 set(SOURCES

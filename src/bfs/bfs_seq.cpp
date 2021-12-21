@@ -8,12 +8,14 @@
 
 using namespace std;
 
+/**
+ * Finds distance between 'from' and 'to'.
+ */
 int bfs_seq(vector<vector<int>>& edges, int const from, int const to) {
     const int INF = INT_MAX;
     int n = edges.size();
 
-    int d[n];
-    fill_n(d, n, INF);
+    vector<int> d(n, INF);
     d[from] = 0;
 
     queue<int> q;

@@ -19,11 +19,49 @@ par на 4 процессах и seq на одном процессе.
    * `make`
 3. Запуск тестов
    * `make test`
-4. Запустить бенчмарки
-   * Для последовательного алгоритма: `CILK_NWORKERS=1 ./bench_seq`
-   * Для параллельного алгоритма: `CILK_NWORKERS=4 ./bench_par`
 
-### Вывод программы
+### Обход в ширину
+
+Запустить бенчмарки
+* Для последовательного алгоритма: `CILK_NWORKERS=1 ./bench_bfs_seq`
+* Для параллельного алгоритма: `CILK_NWORKERS=4 ./bench_bfs_par`
+
+#### Вывод программы
+
+* Последовательная версия
+
+```
+Finding path in cubic graph with side 400
+Iteration #1 finished in 19593 ms
+Iteration #2 finished in 18566 ms
+Iteration #3 finished in 18713 ms
+Iteration #4 finished in 18682 ms
+Iteration #5 finished in 18563 ms
+Testing BFS finished averaging 18823 ms over 5 iterations
+```
+
+* Параллельная версия
+
+```
+Finding path in cubic graph with side 400
+Iteration #1 finished in 8257 ms
+Iteration #2 finished in 7695 ms
+Iteration #3 finished in 8210 ms
+Iteration #4 finished in 7782 ms
+Iteration #5 finished in 7712 ms
+Testing BFS finished averaging 7931 ms over 5 iterations
+```
+
+Параллельный алгоритм BFS на 4 потоках в среднем в 2.37 раза бстрее последовательной реализации.
+
+
+### Сортировка
+
+Запустить бенчмарки
+* Для последовательного алгоритма: `CILK_NWORKERS=1 ./bench_sort_seq`
+* Для параллельного алгоритма: `CILK_NWORKERS=4 ./bench_sort_par`
+
+#### Вывод программы
 
 * Последовательная версия
 
@@ -49,6 +87,4 @@ Iteration #5 finished in 8224 ms
 Sorting finished averaging 8039 ms over 5 iterations
 ```
 
-## Итого
-
-Параллельный алгоритм qsort на 4 потоках в среднем примерно в 3 раза бстрее последовательной реализации.
+Параллельный алгоритм qsort на 4 потоках в среднем в 3.08 раза бстрее последовательной реализации.
